@@ -7,7 +7,7 @@ client = Groq(api_key=env_vars.get("GroqAPIKey"))
 
 def get_ai_response(messages):
     completion = client.chat.completions.create(
-        model="llama-3.1-8b-instant",  # ✅ NEW WORKING MODEL
+        model="llama-3.1-8b-instant",
         messages=messages,
         temperature=0.7,
         max_tokens=1024,
