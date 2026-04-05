@@ -1,0 +1,4 @@
+ddgs
+groq
+python-dotenv
+requests
