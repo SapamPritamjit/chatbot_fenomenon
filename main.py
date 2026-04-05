@@ -51,13 +51,13 @@ Rules:
 def classify_query(prompt):
     prompt_lower = prompt.lower()
 
-    # 🔥 REALTIME KEYWORDS
+    # REALTIME KEYWORDS
     realtime_keywords = [
         "current", "latest", "today", "now",
         "price", "news", "who won", "cm", "pm", "president"
     ]
 
-    # 🔥 GENERAL OVERRIDE
+    # GENERAL OVERRIDE
     general_keywords = [
         "who is", "what is", "define", "explain"
     ]
@@ -76,13 +76,11 @@ def classify_query(prompt):
  
 def chatbot(prompt):
 
-    # 🧠 classify
+    # classify
     classification = classify_query(prompt)
     print("DEBUG:", classification)
 
-    # -------------------------
-    # 🟢 GENERAL QUERY
-    # -------------------------
+    # GENERAL QUERY
     if classification == "general":
         messages = [
             {"role": "system", "content": "You are a precise and accurate AI assistant."},
@@ -91,9 +89,7 @@ def chatbot(prompt):
 
         return get_ai_response(messages)
 
-    # -------------------------
-    # 🔴 REALTIME QUERY
-    # -------------------------
+    # REALTIME QUERY
     elif classification == "realtime":
 
         if "world cup" in prompt.lower():
@@ -136,7 +132,7 @@ def chatbot(prompt):
     # else:
     #     return "Information is unclear."
 
-# 🔥 CLI test
+# CLI test
 if __name__ == "__main__":
     while True:
         user_input = input("You: ")
